@@ -35,3 +35,89 @@ const found = nums.find(ele => (ele % 3 ===0))
 
 console.log(found)
 // Find the index of the first word that is less than 2 characters long.
+
+const firstString = panagram.find((ele) => {
+  return ele.length < 2 ? 'ndex' : 'none'
+})
+//--------------------------------------------------------///-----------------------------------------
+// Find Index
+
+// Find the index of the first number that is divisible by 3.
+const numDivByThree = nums.findIndex(ele => !(ele % 3))
+console.log(numDivByThree)
+
+// Find the index of the first word that is less than 2 characters long.
+
+const firstWord = panagram.findIndex((ele, index) => {
+if( ele.length < 2){
+  return index;
+}
+index ++
+})
+console.log(firstWord)
+
+//--------------------------------------------------------///-----------------------------------------
+
+//For Each
+// Log each value of the array multiplied by 3.
+
+const eachValue = () => {
+  const newArray = [];
+  nums.forEach((ele) => {
+    if(ele % 3 === 0) {
+      newArray.push(ele)
+    }
+  })
+  return newArray;
+}
+console.log(eachValue())
+
+// Log each word with an exclamation point at the end of it.
+
+const exclamation = () => {
+  let newArray = []
+  panagram.forEach((ele) => {
+   newArray.push(ele += '!')
+  })
+  
+  return newArray
+} 
+console.log(exclamation()) 
+
+//--------------------------------------------------------///-----------------------------------------
+//Map
+
+// Make a new array of each number multiplied by 100.
+const multipliedByHundred = () => {
+  const newArray = [];
+  nums.map((ele) => {
+    if(ele % 100 === 0) {
+      newArray.push(ele)
+    }
+  })
+  return newArray;
+}
+console.log(multipliedByHundred())
+
+// Make a new array of all of the words in all uppercase.
+
+const wordUppercase = () => {
+  let newArray = []
+  panagram.map((ele) => {
+   newArray.push(ele.toUpperCase())
+  })
+  
+  return newArray
+} 
+console.log(wordUppercase()) 
+
+//--------------------------------------------------------///-----------------------------------------
+// Some
+// Find out if some numbers are divisible by 7.
+const someNumbers = (ele) => ele % 7 === 0;
+
+console.log(nums.some(someNumbers));
+
+// Find out if some words have the letter a in them.
+const someWords = (ele) => ele.includes('a')
+console.log(panagram.some(someWords))
